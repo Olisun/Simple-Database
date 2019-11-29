@@ -1,0 +1,30 @@
+{
+  "name": "simple-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olisun/Simple-Database.git"
+  },
+  "author": "Oliver Sun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olisun/Simple-Database/issues"
+  },
+  "homepage": "https://github.com/Olisun/Simple-Database#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}

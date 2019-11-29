@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS addressBook;
+CREATE DATABASE addressBook;
