@@ -1,0 +1,8 @@
+body {
+  display: block;
+  background: yellow;
+}
+
+#whereDataSpitsOut {
+  display: block;
+}
