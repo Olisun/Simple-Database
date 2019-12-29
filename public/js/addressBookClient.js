@@ -4,8 +4,8 @@ $(document).ready(function () {
   var address = $("#address");
   var submit = $("#submit");
   var submit2 = $("#submit2");
-  var displayData = $("#whereDataSpitsOut")
-
+  var displayData = $("#whereDataSpitsOut");
+  var deleteButton = $(".delete");
 
 
   $(document).on("click", "#addData", function (event) {
@@ -47,12 +47,27 @@ $(document).ready(function () {
       console.log(data)
       displayData.empty();
       for (var i = 0; i < data.length; i++) {
-        displayData.append(`<div>${data[i].name}, ${data[i].address}</div>`);
+        displayData.append(`<div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${data[i].name}</h5>
+          <p class="card-text">${data[i].address}</p>
+          <button id="edit" type="button" class="btn btn-primary">Edit</button>
+          <button onClick="deleteContact()" type="button" class="btn btn-primary">Delete</button>
+        </div>
+      </div>`)
       }
     });
   }
+
+
+
   submit2.on("click", function () {
-    alert("Clicked");
     getDataBase();
+  });
+
+  deleteButton.on("click", function () {
+    deleteContact();
+    alert("delete button clicked");
+
   });
 });
