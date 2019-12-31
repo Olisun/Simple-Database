@@ -1,11 +1,12 @@
 $(document).ready(function () {
-
   var name = $("#name");
   var address = $("#address");
   var displayData = $("#whereDataSpitsOut");
 
+  showData();
+
   $(document).on("click", "#addData", addData);
-  $(document).on("click", "#submit2", getDataBase);
+  $(document).on("click", "#addData", showData);
   $(document).on("click", ".delete", deleteContact);
 
   function addData() {
@@ -35,7 +36,7 @@ $(document).ready(function () {
     });
   }
 
-  function getDataBase() {
+  function showData() {
     console.log("inside getDB")
     $.get("/api/contacts", function (data) {
       console.log(data);
@@ -45,17 +46,15 @@ $(document).ready(function () {
         <div class="card-body">
           <h5 class="card-title">${data[i].name}</h5>
           <p class="card-text">${data[i].address}</p>
-          <button class="edit btn btn-primary" type="button">Edit</button>
+          <button class="edit btn btn-primary" data-id=${data[i].id} type="button">Edit</button>
           <button class="delete btn btn-primary" data-id=${data[i].id} type="button">Delete</button>
         </div>
       </div>`)
-        displayData.find(".delete").data("id", data.id)
       }
     });
   }
 
   function deleteContact(event) {
-    alert("delete button clicked");
     event.stopPropagation();
     var id = $(this).data("id");
     console.log(this)
@@ -64,25 +63,17 @@ $(document).ready(function () {
     $.ajax({
       method: "DELETE",
       url: "/api/contacts/" + id
-    }).then(getContacts);
+    }).then(getContacts)
+      .then(showData);
   }
 });
 
+function editContact() {
+  var currentContact = $(this).data("name")
+  $(this).children().hide();
+  $(this).children("input").val(currentContact.text);
+  $(this).children("input.edit").show();
+  $(this).children("input.edit").focus();
+}
 
 
-// function deleteContact(id) {
-//   console.log("inside deleteContact")
-//   $.ajax({
-//     method: "DELETE",
-//     url: "/api/contacts/" + id
-//   }).then(getContacts);
-// }
-
-// function handleDelete() {
-//   console.log("inside handleDelete")
-//   var currentContactCard = $(this)
-//   console.log(currentContactCard)
-
-
-//   deleteContact(currentContactCard.id);
-// }

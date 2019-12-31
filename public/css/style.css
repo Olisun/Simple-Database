@@ -1,8 +1,22 @@
 body {
-  display: block;
-  background: yellow;
+  background-color: #dedceb
 }
 
 #whereDataSpitsOut {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  background-color: #dedceb
+}
+
+.card-body {
+  border: 1px solid black;
+  box-shadow: 7px 10px 5px -3px rgba(0, 0, 0, 0.56);
+  border-radius: 10px;
+  /* background-color: white; */
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  margin: 20px;
 }
