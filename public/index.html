@@ -13,22 +13,41 @@
 <body>
 
 <div class="container">
-  <form id="addData">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-      <small class="form-text text-muted"></small>
+
+  <div class="button-container">
+    <button type="button" id="add-contact-button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">+</button>
+    <p id="new-contact">New Contact</p>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Contact</h5>
+        </div>
+        <div class="modal-body">
+          <form id="addData">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+              <small class="form-text text-muted"></small>
+            </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" aria-describedby="emailHelp">
+            <small class="form-text text-muted"></small>
+          </div>
+          <button type="button" id="close-modal-button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+        </form>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input type="text" class="form-control" id="address" aria-describedby="emailHelp">
-      <small class="form-text text-muted"></small>
-    </div>
-    <button type="button" id="submit" class="btn btn-primary">Submit</button>
-  </form>
-  <br>
+  </div>
+
   <div id="whereDataSpitsOut"></div>
-  <br>
+  
 </div>
 
   

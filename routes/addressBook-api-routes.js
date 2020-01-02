@@ -40,7 +40,7 @@ module.exports = function (app) {
   });
 
 
-  app.put("/api/contacts", function (req, res) {
+  app.put("/api/contacts/:id", function (req, res) {
     db.addressBook.update({
       name: req.params.name,
       address: req.params.address

@@ -2,12 +2,28 @@ body {
   background-color: #dedceb
 }
 
+.container {
+  margin-top: 40px;
+}
+
+#add-contact-button {
+  border-radius: 50%;
+  font-weight: 900;
+}
+
+#new-contact {
+  margin-right: 20px;
+  float: left;
+  font-size: 28px;
+}
+
 #whereDataSpitsOut {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
+  margin-top: 40px;
   background-color: #dedceb
 }
 
@@ -19,4 +35,9 @@ body {
   /* margin-left: 10px; */
   /* margin-right: 10px; */
   margin: 20px;
+}
+
+.updateData {
+  /* display: none; */
+  color: red;
 }
