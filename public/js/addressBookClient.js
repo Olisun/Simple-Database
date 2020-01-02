@@ -149,13 +149,3 @@ $(document).ready(function () {
     }).then(getContacts);
   }
 });
-
-
-
-
-
-  // var currentContact = $(this).data("name")
-  // $(this).children().hide();
-  // $(this).children("input").val(currentContact.text);
-  // $(this).children("input.edit").show();
-  // $(this).children("input.edit").focus();
