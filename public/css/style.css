@@ -26,11 +26,3 @@ body {
   margin-top: 40px;
   background-color: #dedceb
 }
-
-.card-body {
-  border: 1px solid black;
-  box-shadow: 7px 10px 5px -3px rgba(0, 0, 0, 0.56);
-  border-radius: 10px;
-  margin: 20px;
-  background: white;
-}
