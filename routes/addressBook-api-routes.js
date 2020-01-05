@@ -11,8 +11,8 @@ module.exports = function (app) {
 
   app.post("/api/contacts", function (req, res) {
     console.log("api/contacts route hit successfully")
-    console.log(req)
-    console.log(res)
+    // console.log(req)
+    // console.log(res)
     db.addressBook.create(req.body).then(function (dbaddressBook) {
       res.json(dbaddressBook);
     });
@@ -41,9 +41,11 @@ module.exports = function (app) {
 
 
   app.put("/api/contacts/:id", function (req, res) {
+    console.log("api/contacts:id route hit")
+    console.log(res)
     db.addressBook.update({
-      name: req.params.name,
-      address: req.params.address
+      name: req.body.name,
+      address: req.body.address
     }, {
       where: {
         id: req.body.id

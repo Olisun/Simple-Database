@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   var name = $("#name");
   var address = $("#address");
@@ -23,6 +24,13 @@ $(document).ready(function () {
     });
   }
 
+  function newContact(userData) {
+    console.log(userData)
+    $.post("/api/contacts", userData)
+      .then(getContacts)
+      .then(showData);
+  }
+
   function updateData() {
     event.preventDefault();
     console.log("inside updateData")
@@ -34,13 +42,6 @@ $(document).ready(function () {
       name: name.val().trim(),
       address: address.val().trim()
     });;
-  }
-
-  function newContact(userData) {
-    console.log(userData)
-    $.post("/api/contacts", userData)
-      .then(getContacts)
-      .then(showData);
   }
 
   function updateContact(newData) {
