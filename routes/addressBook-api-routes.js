@@ -48,7 +48,7 @@ module.exports = function (app) {
       address: req.body.address
     }, {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function (dbaddressBook) {
       res.json(dbaddressBook);
